@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "id": "kroste.dummy",
+  "displayName": "Dummy Plugin",
+  "version": "0.1.0",
+  "author": "Kroste",
+  "description": "Minimal-Plugin für Kroste ModManager. Beweist die Kette Contracts → NuGet → Discovery → Load → UI, ohne echte Mod-Verwaltung. Zielspiele: Counter-Strike 2 (730), Team Fortress 2 (440), Proton Experimental (1493710, Linux-Dev-Fallback).",
+  "assembly": "ModManager.Plugins.Dummy.dll",
+  "entryType": "ModManager.Plugins.Dummy.DummyPlugin",
+  "minHostVersion": "0.2.0",
+  "targets": [
+    {
+      "gameId": "counter-strike-2",
+      "displayName": "Counter-Strike 2",
+      "steamAppId": 730,
+      "alternativeExecutableNames": [],
+      "platforms": "Both"
+    },
+    {
+      "gameId": "team-fortress-2",
+      "displayName": "Team Fortress 2",
+      "steamAppId": 440,
+      "alternativeExecutableNames": [],
+      "platforms": "Both"
+    },
+    {
+      "gameId": "proton-experimental",
+      "displayName": "Proton Experimental (dev-Fallback)",
+      "steamAppId": 1493710,
+      "alternativeExecutableNames": [],
+      "platforms": "Linux"
+    }
+  ],
+  "updateSource": {
+    "kind": "github",
+    "repo": "Kroste/ModManager.Plugins.Dummy"
+  }
+}

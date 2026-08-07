@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ModManager.Plugins.Dummy</RootNamespace>
+    <AssemblyName>ModManager.Plugins.Dummy</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Contracts: kommt vom Host im gleichen Prozess. Private=false +
+         ExcludeAssets=runtime verhindern, dass das Plugin die Contract-DLL
+         mitschleppt (führt sonst zu InvalidCast: zwei geladene Typen). -->
+    <PackageReference Include="Kroste.ModManager.PluginContracts"
+                      PrivateAssets="all" ExcludeAssets="runtime" />
+    <PackageReference Include="Avalonia"
+                      PrivateAssets="all" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <!-- plugin.json neben die DLL mitkopieren -->
+  <ItemGroup>
+    <None Update="plugin.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

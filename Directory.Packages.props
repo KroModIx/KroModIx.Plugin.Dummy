@@ -1,0 +1,16 @@
+<Project>
+  <ItemGroup>
+    <!-- Host-Contracts als NuGet-Package. MinHostVersion in plugin.json pinnt zusätzlich. -->
+    <!-- Version-Range: akzeptiert das aktuelle 0.2.0-preview (lokal gepackt)
+         und alles danach. Nach dem echten v0.2.0-Release des Hosts kann das
+         auf "0.2.0" gepinnt werden. -->
+    <PackageVersion Include="Kroste.ModManager.PluginContracts" Version="[0.2.0-preview,)" />
+
+    <!-- Avalonia: kommt vom Host mit — nur für Compile-Zeit referenziert
+         (Private=false + ExcludeAssets=runtime in der csproj), damit im Plugin-Output
+         keine doppelte Avalonia-DLL landet. -->
+    <PackageVersion Include="Avalonia" Version="12.1.0" />
+
+    <PackageVersion Include="MinVer" Version="7.0.0" />
+  </ItemGroup>
+</Project>
