@@ -33,12 +33,11 @@ jobs:
           fi
 
       - name: Restore (GitHub Packages)
+        # Source ist bereits in nuget.config — nur Credentials setzen.
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          dotnet nuget add source \
-            "https://nuget.pkg.github.com/Kroste/index.json" \
-            --name kroste-github \
+          dotnet nuget update source kroste-github \
             --username github-actions \
             --password "${NUGET_AUTH_TOKEN}" \
             --store-password-in-clear-text
