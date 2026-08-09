@@ -3,9 +3,9 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Layout;
 using Avalonia.Media;
-using ModManager.PluginContracts;
+using KroModIx.Plugin.Contracts;
 
-namespace ModManager.Plugins.Dummy;
+namespace KroModIx.Plugin.Dummy;
 
 /// <summary>Ein Tab des Dummy-Plugins. Zeigt Kontext-Info und ein paar Beispiel-
 /// Aktionen (Log-Eintrag, HTTP-Probe, Notification).</summary>

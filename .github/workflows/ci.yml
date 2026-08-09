@@ -20,7 +20,7 @@ jobs:
           cache-dependency-path: Directory.Packages.props
 
       - name: Restore (GitHub Packages)
-        # NuGet-Package Kroste.ModManager.PluginContracts kommt von GitHub Packages.
+        # NuGet-Package KroModIx.Plugin.Contracts kommt von GitHub Packages.
         # Source ist bereits in nuget.config eingetragen — nur Credentials setzen.
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

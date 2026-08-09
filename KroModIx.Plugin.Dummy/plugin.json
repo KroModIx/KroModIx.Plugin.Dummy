@@ -2,11 +2,11 @@
   "schema": 1,
   "id": "kroste.dummy",
   "displayName": "Dummy Plugin",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Kroste",
-  "description": "Minimal-Plugin für Kroste ModManager. Beweist die Kette Contracts → NuGet → Discovery → Load → UI, ohne echte Mod-Verwaltung. Zielspiele: Counter-Strike 2 (730), Team Fortress 2 (440), Proton Experimental (1493710, Linux-Dev-Fallback).",
-  "assembly": "ModManager.Plugins.Dummy.dll",
-  "entryType": "ModManager.Plugins.Dummy.DummyPlugin",
+  "description": "Minimal-Plugin für KroModIx. Beweist die Kette Contracts → NuGet → Discovery → Load → UI, ohne echte Mod-Verwaltung. Zielspiele: Counter-Strike 2 (730), Team Fortress 2 (440), Proton Experimental (1493710, Linux-Dev-Fallback).",
+  "assembly": "KroModIx.Plugin.Dummy.dll",
+  "entryType": "KroModIx.Plugin.Dummy.DummyPlugin",
   "minHostVersion": "0.2.0",
   "targets": [
     {
@@ -33,6 +33,6 @@
   ],
   "updateSource": {
     "kind": "github",
-    "repo": "Kroste/ModManager.Plugins.Dummy"
+    "repo": "KroModIx/KroModIx.Plugin.Dummy"
   }
 }

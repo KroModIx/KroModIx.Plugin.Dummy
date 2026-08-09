@@ -51,15 +51,15 @@ jobs:
       - name: Plugin-Bundle packen (DLL + plugin.json)
         run: |
           mkdir -p bundle
-          cp ModManager.Plugins.Dummy/bin/Release/net10.0/ModManager.Plugins.Dummy.dll bundle/
-          cp ModManager.Plugins.Dummy/bin/Release/net10.0/plugin.json bundle/
+          cp KroModIx.Plugin.Dummy/bin/Release/net10.0/KroModIx.Plugin.Dummy.dll bundle/
+          cp KroModIx.Plugin.Dummy/bin/Release/net10.0/plugin.json bundle/
           cd bundle
-          zip -r "../ModManager.Plugins.Dummy-${{ steps.ver.outputs.v }}.zip" .
+          zip -r "../KroModIx.Plugin.Dummy-${{ steps.ver.outputs.v }}.zip" .
 
       - name: GitHub-Release
         if: github.ref_type == 'tag'
         uses: softprops/action-gh-release@v3
         with:
-          files: ModManager.Plugins.Dummy-*.zip
+          files: KroModIx.Plugin.Dummy-*.zip
           generate_release_notes: true
           fail_on_unmatched_files: true

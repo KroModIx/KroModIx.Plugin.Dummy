@@ -1,9 +1,9 @@
-# ModManager.Plugins.Dummy
+# KroModIx.Plugin.Dummy
 
-[![CI](https://github.com/Kroste/ModManager.Plugins.Dummy/actions/workflows/ci.yml/badge.svg)](https://github.com/Kroste/ModManager.Plugins.Dummy/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/Kroste/ModManager.Plugins.Dummy)](https://github.com/Kroste/ModManager.Plugins.Dummy/releases)
+[![CI](https://github.com/Kroste/KroModIx.Plugin.Dummy/actions/workflows/ci.yml/badge.svg)](https://github.com/Kroste/KroModIx.Plugin.Dummy/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/Kroste/KroModIx.Plugin.Dummy)](https://github.com/Kroste/KroModIx.Plugin.Dummy/releases)
 
-Minimal-Plugin für den [Kroste ModManager](https://github.com/Kroste/Mod-Manager).
+Minimal-Plugin für den [KroModIx](https://github.com/KroModIx/KroModIx).
 Zeigt „Hello from Dummy" plus Kontext-Info und drei Test-Aktionen (Log, Notification,
 HTTP-Probe). Keine echte Mod-Verwaltung — beweist die Plugin-Kette:
 
@@ -17,20 +17,20 @@ HTTP-Probe). Keine echte Mod-Verwaltung — beweist die Plugin-Kette:
 
 ## Installation
 
-Aus dem [Release](https://github.com/Kroste/ModManager.Plugins.Dummy/releases) das ZIP
+Aus dem [Release](https://github.com/Kroste/KroModIx.Plugin.Dummy/releases) das ZIP
 herunterladen und entpacken nach:
 
-- **Windows:** `%APPDATA%\ModManager\plugins\dummy\`
-- **Linux:**   `~/.config/ModManager/plugins/dummy/`
+- **Windows:** `%APPDATA%\KroModIx\plugins\dummy\`
+- **Linux:**   `~/.config/KroModIx/plugins/dummy/`
 
-Nach dem Neustart des Kroste ModManagers erscheint bei einem der Ziel-Spiele ein
+Nach dem Neustart des KroModIxs erscheint bei einem der Ziel-Spiele ein
 goldener Stern in der Sidebar-Kachel; im Content-Bereich zeigt das Plugin zwei
 Tabs („Hello", „Info").
 
 ## Entwicklung
 
 ```bash
-dotnet build   # baut gegen Kroste.ModManager.PluginContracts (NuGet)
+dotnet build   # baut gegen KroModIx.Plugin.Contracts (NuGet)
 ```
 
 Das Plugin referenziert Contracts als NuGet-Package aus GitHub Packages
@@ -39,8 +39,8 @@ ist konfiguriert für Tests gegen einen noch nicht gepushten Host-Build.
 
 ## Referenz
 
-- Host: [Kroste/Mod-Manager](https://github.com/Kroste/Mod-Manager)
-- Contracts: [`Kroste.ModManager.PluginContracts`](https://github.com/Kroste?tab=packages) auf GitHub Packages
+- Host: [KroModIx/KroModIx](https://github.com/KroModIx/KroModIx)
+- Contracts: [`KroModIx.Plugin.Contracts`](https://github.com/Kroste?tab=packages) auf GitHub Packages
 - Muster für weitere Plugins: dieses Repo als Vorlage
 
 ## Lizenz

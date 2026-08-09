@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using ModManager.PluginContracts;
+using KroModIx.Plugin.Contracts;
 
-namespace ModManager.Plugins.Dummy;
+namespace KroModIx.Plugin.Dummy;
 
 /// <summary>
 /// Minimal-Implementierung eines Game-Plugins. Kein echtes Mod-Management —
@@ -16,7 +16,7 @@ public sealed class DummyPlugin : IGameModPlugin
     public PluginMetadata Metadata { get; } = new(
         Id: "kroste.dummy",
         DisplayName: "Dummy Plugin",
-        Version: "0.1.0",
+        Version: "1.0.0",
         Author: "Kroste",
         Description: "Beweist die Kette Contracts → NuGet → Discovery → Load → UI.");
 

@@ -1,13 +1,13 @@
-# ModManager.Plugins.Dummy
+# KroModIx.Plugin.Dummy
 
 ## Grundlagen
 
-- **Was:** Minimal-Plugin für Kroste ModManager. End-to-End-Proof der Plugin-Kette
+- **Was:** Minimal-Plugin für KroModIx. End-to-End-Proof der Plugin-Kette
   (Contracts → NuGet → Manifest → Load → UI). Kein echtes Mod-Management.
-- **Stack:** .NET 10, `Kroste.ModManager.PluginContracts` als PackageReference.
-- **Repo:** `github.com/Kroste/ModManager.Plugins.Dummy`.
-- **Deploy-Ziel:** `~/.config/ModManager/plugins/dummy/` (Linux) bzw.
-  `%APPDATA%\ModManager\plugins\dummy\` (Windows).
+- **Stack:** .NET 10, `KroModIx.Plugin.Contracts` als PackageReference.
+- **Repo:** `github.com/Kroste/KroModIx.Plugin.Dummy`.
+- **Deploy-Ziel:** `~/.config/KroModIx/plugins/dummy/` (Linux) bzw.
+  `%APPDATA%\KroModIx\plugins\dummy\` (Windows).
 
 ## Aktueller Stand
 
@@ -29,8 +29,8 @@
 - **NuGet-Feed:** `nuget.config` bindet `kroste-github` (GitHub Packages) + optional
   lokalen `/tmp/local-nuget/` ein. Package-Source-Mapping ist Pflicht (CPM+multi-source
   wirft sonst NU1507).
-- **Plugin-Bundle:** Release-Workflow packt `ModManager.Plugins.Dummy.dll` +
-  `plugin.json` als ZIP mit dem Namensschema `ModManager.Plugins.Dummy-X.Y.Z.zip`.
-- **`Kroste.ModManager.PluginContracts`** als NuGet-Package aus GitHub Packages.
+- **Plugin-Bundle:** Release-Workflow packt `KroModIx.Plugin.Dummy.dll` +
+  `plugin.json` als ZIP mit dem Namensschema `KroModIx.Plugin.Dummy-X.Y.Z.zip`.
+- **`KroModIx.Plugin.Contracts`** als NuGet-Package aus GitHub Packages.
   Erst nach Host-v0.2.0-Release verfügbar; vorher lokal via `dotnet pack` in
   `/tmp/local-nuget/` und `-p:MinVerVersionOverride=0.2.0-preview`.
