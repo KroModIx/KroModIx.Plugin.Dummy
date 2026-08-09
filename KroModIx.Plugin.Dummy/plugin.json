@@ -2,12 +2,12 @@
   "schema": 1,
   "id": "kroste.dummy",
   "displayName": "Dummy Plugin",
-  "version": "1.1.0",
+  "version": "1.7.0",
   "author": "Kroste",
-  "description": "Minimal-Plugin für KroModIx. Beweist die Kette Contracts → NuGet → Discovery → Load → UI. Ab v1.1.0 zusätzlich End-to-End-Beweis für IHostApiExtender: zwei REST-Endpoints unter /plugins/kroste.dummy/. Zielspiele: Counter-Strike 2 (730), Team Fortress 2 (440), Proton Experimental (1493710, Linux-Dev-Fallback).",
+  "description": "Minimal-Plugin für KroModIx. Beweist die Kette Contracts → NuGet → Discovery → Load → UI. v1.1.0 IHostApiExtender: zwei REST-Endpoints unter /plugins/kroste.dummy/. v1.7.0 IUpdateNotifier: fake Update-Badges auf den Sidebar-Kacheln der Zielspiele (End-to-End-Beweis der Badge-Kette). Zielspiele: Counter-Strike 2 (730), Team Fortress 2 (440), Proton Experimental (1493710, Linux-Dev-Fallback).",
   "assembly": "KroModIx.Plugin.Dummy.dll",
   "entryType": "KroModIx.Plugin.Dummy.DummyPlugin",
-  "minHostVersion": "1.1.0",
+  "minHostVersion": "1.7.0",
   "targets": [
     {
       "gameId": "counter-strike-2",

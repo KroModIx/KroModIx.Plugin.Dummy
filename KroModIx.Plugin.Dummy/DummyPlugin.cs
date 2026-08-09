@@ -10,18 +10,18 @@ namespace KroModIx.Plugin.Dummy;
 /// <summary>
 /// Minimal-Implementierung eines Game-Plugins. Kein echtes Mod-Management —
 /// zeigt nur "Hello from Dummy" plus PluginDataDir und einen HTTP-Probe.
-/// Ab v1.1.0 zusätzlich End-to-End-Beweis für <see cref="IHostApiExtender"/>
-/// (aus KroModIx.Plugin.Contracts v1.1.0): zwei simple REST-Routen unter
-/// <c>/plugins/kroste.dummy/</c>.
+/// v1.1.0 bringt <see cref="IHostApiExtender"/>: zwei simple REST-Routen unter
+/// <c>/plugins/kroste.dummy/</c>. v1.7.0 zusätzlich <see cref="IUpdateNotifier"/>
+/// mit statischen Fake-Update-Zahlen — Host-Badge-Kette End-to-End im CI beweisbar.
 /// </summary>
-public sealed class DummyPlugin : IGameModPlugin, IHostApiExtender
+public sealed class DummyPlugin : IGameModPlugin, IHostApiExtender, IUpdateNotifier
 {
     public PluginMetadata Metadata { get; } = new(
         Id: "kroste.dummy",
         DisplayName: "Dummy Plugin",
-        Version: "1.1.0",
+        Version: "1.7.0",
         Author: "Kroste",
-        Description: "Beweist die Kette Contracts → NuGet → Discovery → Load → UI + IHostApiExtender.");
+        Description: "Beweist die Kette Contracts → NuGet → Discovery → Load → UI + IHostApiExtender + IUpdateNotifier.");
 
     public IReadOnlyList<GameTarget> Targets { get; } = new[]
     {
@@ -94,5 +94,23 @@ public sealed class DummyPlugin : IGameModPlugin, IHostApiExtender
             query = req.Query,
             userAgent = req.Headers.TryGetValue("User-Agent", out var ua) ? ua : null,
         }));
+    }
+
+    // ---- IUpdateNotifier (Contracts v1.7.0) ----
+
+    /// <summary>Meldet konstant für alle Zielspiele eine kleine Update-Anzahl.
+    /// Bewusst hardcoded — der Dummy ist kein echter Mod-Update-Checker,
+    /// nur der End-to-End-Beweis der Contracts-Kette. LS25 (mit ModHub) und
+    /// RenPyAssist (mit F95zone-Thread-Watch) werden das später mit echten
+    /// Werten überschreiben.</summary>
+    public Task<IReadOnlyList<GameUpdateInfo>> GetPendingUpdatesAsync(CancellationToken cancellationToken)
+    {
+        IReadOnlyList<GameUpdateInfo> updates =
+        [
+            new(730,     3, "Test-Updates für Counter-Strike 2 (Dummy-Plugin)"),
+            new(440,     7, "Test-Updates für Team Fortress 2 (Dummy-Plugin)"),
+            new(1493710, 1, "Test-Update für Proton Experimental (Dummy-Plugin)"),
+        ];
+        return Task.FromResult(updates);
     }
 }
