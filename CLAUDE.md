@@ -26,7 +26,7 @@
 
 ## Referenz
 
-- **NuGet-Feed:** `nuget.config` bindet `kroste-github` (GitHub Packages) + optional
+- **NuGet-Feed:** `nuget.config` bindet `kromodix-github` (GitHub Packages) + optional
   lokalen `/tmp/local-nuget/` ein. Package-Source-Mapping ist Pflicht (CPM+multi-source
   wirft sonst NU1507).
 - **Plugin-Bundle:** Release-Workflow packt `KroModIx.Plugin.Dummy.dll` +

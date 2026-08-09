@@ -34,7 +34,7 @@ dotnet build   # baut gegen KroModIx.Plugin.Contracts (NuGet)
 ```
 
 Das Plugin referenziert Contracts als NuGet-Package aus GitHub Packages
-(`kroste-github`-Feed in `nuget.config`). Lokaler Dev-Feed `/tmp/local-nuget/`
+(`kromodix-github`-Feed in `nuget.config`). Lokaler Dev-Feed `/tmp/local-nuget/`
 ist konfiguriert für Tests gegen einen noch nicht gepushten Host-Build.
 
 ## Referenz
