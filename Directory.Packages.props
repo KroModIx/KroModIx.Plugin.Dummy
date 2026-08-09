@@ -1,7 +1,8 @@
 <Project>
   <ItemGroup>
-    <!-- Host-Contracts als NuGet-Package. MinHostVersion in plugin.json pinnt zusätzlich. -->
-    <PackageVersion Include="KroModIx.Plugin.Contracts" Version="1.0.0" />
+    <!-- Host-Contracts als NuGet-Package. MinHostVersion in plugin.json pinnt zusätzlich.
+         v1.1.0 bringt IHostApiExtender (Plugin-Sub-Routen unter /plugins/{id}/...). -->
+    <PackageVersion Include="KroModIx.Plugin.Contracts" Version="1.1.0" />
 
     <!-- Avalonia: kommt vom Host mit — nur für Compile-Zeit referenziert
          (Private=false + ExcludeAssets=runtime in der csproj), damit im Plugin-Output
