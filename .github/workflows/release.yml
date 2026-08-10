@@ -49,10 +49,20 @@ jobs:
           -p:Version=${{ steps.ver.outputs.v }}
 
       - name: Plugin-Bundle packen (DLL + plugin.json)
+        # WICHTIG: die plugin.json im Source-Repo enthält eine hart codierte
+        # "version"-Zeile. Beim Release-Tag durch die Tag-Version ersetzen,
+        # sonst hat der PluginUpdateService eine Endlosschleife
+        # („Update verfügbar" → Install → beim nächsten Check wieder verfügbar
+        # weil version im Bundle unverändert alt ist).
         run: |
           mkdir -p bundle
           cp KroModIx.Plugin.Dummy/bin/Release/net10.0/KroModIx.Plugin.Dummy.dll bundle/
           cp KroModIx.Plugin.Dummy/bin/Release/net10.0/plugin.json bundle/
+          if [ "${GITHUB_REF_TYPE}" = "tag" ]; then
+            sed -i -E 's/("version"\s*:\s*)"[^"]+"/\1"'"${{ steps.ver.outputs.v }}"'"/' bundle/plugin.json
+            echo "== gepatchte plugin.json =="
+            grep '"version"' bundle/plugin.json
+          fi
           cd bundle
           zip -r "../KroModIx.Plugin.Dummy-${{ steps.ver.outputs.v }}.zip" .
 
