@@ -6,3 +6,4 @@ publish/
 .idea/
 .vscode/settings.json
 NuGet-Local/
+nuget.local.config
